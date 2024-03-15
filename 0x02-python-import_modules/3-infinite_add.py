@@ -3,8 +3,6 @@ if __name__ == "__main__":
     """ Add all arguments."""
     import sys
 
-    result = 0
+    total_sum = sum([int(arg) for arg in sys.argv[1:]])
+    print(total_sum)
 
-    for i in range(len(sys.argv) - 1):
-        result += (int(sys.argv[i + 1]))
-    print("{:d}".format(result))
