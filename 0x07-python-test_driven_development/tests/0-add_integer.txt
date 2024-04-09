@@ -1,0 +1,51 @@
+Using the text file to test the modules in the ``0-add_integer`` module
+===================================================================================
+
+Using ``add_integer``
+--------------------------
+
+import function from module:
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Test only one argument input:
+
+	>>> add_integer(2)
+	100
+
+Test integer value input:
+
+	>>> add_integer(0)
+	98
+
+Test float value input:
+
+	>>> add_integer(136.33)
+	234
+
+Test using invalid type:
+	
+	>>> add_integer("radius", 0)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Test using negative, positive inputs:
+
+	>>> add_integer(-13947692, 57234)
+	-13890458
+
+Test using positive, negative inputs:
+
+	>>> add_integer(12, -4)
+	8
+
+Test using integer and float values:
+
+	>>> add_integer(232323.23, 232323)
+	464646
+
+Test two big integers:
+
+	>>> add_integer(999999998, 999999999)
+	1999999997
