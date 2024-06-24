@@ -27,7 +27,10 @@ def main():
                 pool_pre_ping=True)
         Base.metadata.create_all(engine)
         session = Session(engine)
-        for state in session.query(State).order_by(State.id).all():
+        states = session.query(State).filter(
+                State.name.like("%a%")
+                ).order_by(State.id).all()
+        for state in states:
             print("{}: {}".format(state.id, state.name))
         session.close()
     except Exception:
