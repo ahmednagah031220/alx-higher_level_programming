@@ -22,7 +22,7 @@ def main():
             search_string.strip("")
             )
     connection = MySQLdb.connect(host=db_host, port=db_port,
-                                 sswd=db_password,
+                                 user=db_user, passwd=db_password,
                                  db=db_db, charset="utf8")
     cursor = connection.cursor()
     cursor.execute(query_string)

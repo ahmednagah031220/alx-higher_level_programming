@@ -20,9 +20,12 @@ def main():
         query_string = "SELECT * FROM states WHERE CONVERT(name USING Latin1)"
         query_string += " COLLATE Latin1_General_CS"
         query_string += " LIKE 'N%'"
-        connection = MySQLdb.connect(host=db_host, port=db_port,
-                                     user=db_user, passwd=db_password,
-                                     db=db_db, charset="utf8")
+        connection = MySQLdb.connect(host=db_host,
+                                     port=db_port,
+                                     user=db_user,
+                                     passwd=db_password,
+                                     db=db_db,
+                                     charset="utf8")
         try:
             cursor = connection.cursor()
             cursor.execute(query_string)
