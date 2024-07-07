@@ -1,3 +1,3 @@
 #!/bin/bash
-# Docs 
-curl -w "%{size_download}\n" "$1" -so /dev/null
+# getting the size of a request from the server
+curl -s "$1" | wc -c
